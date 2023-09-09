@@ -1,11 +1,15 @@
 import React from 'react'
-import { AppBar, Toolbar, styled, Box } from "@mui/material"
+import { AppBar, Toolbar, styled, Box} from "@mui/material"
 import image from "../../logo/shopshavvy.png"
+//importing headers components
+import Search from './Search'
+import CustomButtons from './CustomButtons'
 
 const StyledHeader = styled(AppBar)`
 background: #2874f0;
 height: 55px;
 box-Shadow:none;
+marginTop:10;
 `
 
 const Component = styled(Box)`
@@ -16,16 +20,20 @@ const Component = styled(Box)`
 `;
 
 
+
 const Header = () => {
   return (
     <StyledHeader>
-      <Toolbar>
+      <Toolbar style={{minHeight:55}}>
         <Component>
           <img src={image} style={{ width: 120 }} alt="logo" />
-           <Box>
-           </Box>
-
         </Component>
+        <Search/>
+
+        <Box>
+        <CustomButtons/>
+        </Box>
+
       </Toolbar>
     </StyledHeader>
   )
