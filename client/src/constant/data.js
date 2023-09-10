@@ -12,9 +12,11 @@ export const navData = [
 ];
 
 export const bannerData = [
-    { id: 1, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/188439959ac11af3.png?q=50' },
+    { id: 1, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/8a89ee09acc1a9e5.jpg?q=50' },
     { id: 2, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/56a1813dcc6d43e8.jpg?q=50' },
     { id: 3, url: 'https://rukminim1.flixcart.com/flap/2300/560/image/ae9966569097a8b7.jpg?q=50' },
     { id: 4, url: 'https://rukminim1.flixcart.com/flap/2300/560/image/f6202f13b6f89b03.jpg?q=50' },
     { id: 5, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/61fc3ca698f9bed0.jpg?q=50' },
+    { id: 6, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/0bf2958ea096d1f1.png?q=50' },
+    { id: 7, url: 'https://rukminim2.flixcart.com/fk-p-flap/2300/560/image/188439959ac11af3.png?q=50' },
 ];
