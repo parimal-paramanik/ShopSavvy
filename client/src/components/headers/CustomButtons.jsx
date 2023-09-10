@@ -7,7 +7,8 @@ const Wrapper= styled(Box)`
   margin: '0 3% 0 auto';
   & > button, & >p,& >div{
     margin-right:40px;
-    font-size:14px;
+    font-size:16px;
+    align-items:center;
   };
 `
 const Container = styled(Box)`
