@@ -18,7 +18,9 @@ const Component = styled(Box)`
     // color: #FFFFFF;
     // text-decoration: none;
 `;
-
+const CustomButtonWrapper= styled(Box)`
+     margin-left:5%;
+ `
 
 
 const Header = () => {
@@ -29,10 +31,9 @@ const Header = () => {
           <img src={image} style={{ width: 120 }} alt="logo" />
         </Component>
         <Search/>
-
-        <Box>
+        <CustomButtonWrapper>
         <CustomButtons/>
-        </Box>
+        </CustomButtonWrapper>
 
       </Toolbar>
     </StyledHeader>
