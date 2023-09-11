@@ -3,6 +3,8 @@ const app= express()
 import {Connection} from "./Database/db.js";
 import DeafaultProducts from "./default.js";
 import dotenv from "dotenv"
+import cors from "cors"
+app.use(cors())
 dotenv.config()
 // app.get("/",(req,res)=>{
 //     res.send("everything is fine")

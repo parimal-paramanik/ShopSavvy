@@ -1,13 +1,18 @@
 import React,{useState} from 'react'
 import {Dialog,Box,TextField, Button, Typography,styled} from  "@mui/material"
+// importing signup api
+
+import { SignupUser } from '../../service/api'
 const Conmponent= styled(Box)`
-height: 70vh;
-width: 90vh;
+    height: 70vh;
+    width: 90vh;
+    padding: 0;
+    padding-top: 0;
 `
 const Image = styled(Box)`
-    background: #2B65EC url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 65% no-repeat;
-    width: 40%;
-    height: 100%;
+    background: #2B65EC url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 85% no-repeat;
+    width: 30%;
+    height: 82%;
     padding: 45px 35px;
     & > p, & > h5 {
         color: #FFFFFF;
@@ -15,7 +20,7 @@ const Image = styled(Box)`
     }
 `
 const Wrapper= styled(Box)`
-padding: 25px 35px;
+padding: 10px 35px;
 display: flex;
 flex: 1;
 overflow: auto;
@@ -55,17 +60,31 @@ const CreateAccount = styled(Typography)`
 
 const initialaccountview={
   login:{
-    view:"login"
+    view:"login",
+    heading:"login",
+    subheading:"Give access to your Orders Wishlists and recomendations"
   },
   signup:{
-    view:"signup"
+    view:"signup",
+    heading:"signup",
+    subheading:"welocome to shopshavvy"
   },
+}
+
+const signupfield= {
+  firstname : "",
+  lastname:"",
+  username:"",
+  email:"",
+  password:""
 }
 const LoginDialog = ({open,setOpen}) => {
  const [account,toggleAccount]= useState(initialaccountview.login)
+ const [signup,setSignup]= useState(signupfield)
  
   const dialogClose= ()=>{
     setOpen(false)
+    toggleAccount(initialaccountview.login)
   }
   // toggling between signup and login div
   const togglelogintosignup=()=>{
@@ -74,14 +93,23 @@ const LoginDialog = ({open,setOpen}) => {
   const togglesignuptologin=()=>{
     toggleAccount(initialaccountview.login)
   }
+  const signupfieldChanged=(e)=>{
+        setSignup({...signup,[e.target.name]:e.target.value})
+        console.log(signup)
+  }
+
+  // api fetch signup /login
+  const signupApi=async()=>{
+      const data= await SignupUser(signup)
+  }
 
   return (
     <Dialog open= {open} onClose={dialogClose} PaperProps={{ sx: { maxWidth: 'unset' } }}>
       <Conmponent>
         <Box style={{display:'flex',height:"100%"}}>
         <Image>
-          <Typography variant='h5'>Login</Typography>
-          <Typography  style={{marginTop:20}}>Give access to your Orders Wishlists and recomendations</Typography>
+          <Typography variant='h5'>{account.heading}</Typography>
+          <Typography  style={{marginTop:20}}>{account.subheading}</Typography>
         </Image>
         {
          account.view === "login"? 
@@ -96,12 +124,13 @@ const LoginDialog = ({open,setOpen}) => {
         </Wrapper>
         :
         <Wrapper>
-        <TextField  variant="standard" label="enter your firstname" />
-        <TextField  variant="standard" label="enter your lastname" />
-        <TextField  variant="standard" label="enter your username" />
-        <TextField  variant="standard" label="enter your email address" />
-        <TextField  variant="standard" label="enter your  password" />
-        <LoginButton>Signup</LoginButton>
+        <TextField onChange={(e)=>signupfieldChanged(e)} name='firstname'  variant="standard"  label="enter your firstname" />
+        <TextField onChange={(e)=>signupfieldChanged(e)} name='lastname'  variant="standard" label="enter your lastname" />
+        <TextField onChange={(e)=>signupfieldChanged(e)} name='username'  variant="standard" label="enter your username" />
+        <TextField onChange={(e)=>signupfieldChanged(e)} name='email'  variant="standard" label="enter your email address" />
+        <TextField onChange={(e)=>signupfieldChanged(e)}  name='password'  variant="standard" label="enter your  password" />
+        {/* <TextField  variant="standard" label="enter your  mobile" /> */}
+        <LoginButton onClick={()=>signupApi()}>Signup</LoginButton>
         <CreateAccount onClick={()=>togglesignuptologin()}>Already a member ? click to login</CreateAccount>
         </Wrapper>
 }
