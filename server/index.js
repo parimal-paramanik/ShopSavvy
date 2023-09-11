@@ -1,11 +1,12 @@
 import express from "express";
 const app= express()
-import Connection from "./Database/db.js";
+import {Connection} from "./Database/db.js";
+import DeafaultProducts from "./default.js";
 import dotenv from "dotenv"
 dotenv.config()
-app.get("/",(req,res)=>{
-    res.send("everything is fine")
-})
+// app.get("/",(req,res)=>{
+//     res.send("everything is fine")
+// })
 
 const PORT= process.env.PORT
 app.listen(PORT, async(req,res)=>{
@@ -17,4 +18,5 @@ app.listen(PORT, async(req,res)=>{
     }
     console.log(`server is awake at port ${PORT}`)
 })
+DeafaultProducts()
 
