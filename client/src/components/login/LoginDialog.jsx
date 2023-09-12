@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import {Dialog,Box,TextField, Button, Typography,styled} from  "@mui/material"
 // importing signup api
 
 import { SignupUser } from '../../service/api'
+import { LoginContext } from '../../context/ContextProvider'
 const Conmponent= styled(Box)`
     height: 70vh;
     width: 90vh;
@@ -81,7 +82,10 @@ const signupfield= {
 const LoginDialog = ({open,setOpen}) => {
  const [account,toggleAccount]= useState(initialaccountview.login)
  const [signup,setSignup]= useState(signupfield)
- 
+
+ // setting the user in context
+  const {setAccount}= useContext(LoginContext)
+   
   const dialogClose= ()=>{
     setOpen(false)
     toggleAccount(initialaccountview.login)
@@ -95,12 +99,16 @@ const LoginDialog = ({open,setOpen}) => {
   }
   const signupfieldChanged=(e)=>{
         setSignup({...signup,[e.target.name]:e.target.value})
-        console.log(signup)
+        // console.log(signup)
   }
 
   // api fetch signup /login
   const signupApi=async()=>{
-      const data= await SignupUser(signup)
+    const data=  await SignupUser(signup)
+    if(!data) return
+    dialogClose()
+    // console.log(data.data.msg)
+    setAccount(signup.firstname)
   }
 
   return (

@@ -1,7 +1,10 @@
 import { Box,Button, Typography,styled} from '@mui/material'
 import ShoppingCart from "@mui/icons-material/ShoppingCart"
 import LoginDialog from '../login/LoginDialog'
-import {useState} from 'react'
+import {useState,useContext} from 'react'
+import { LoginContext } from '../../context/ContextProvider'
+import Profile from './Profile'
+
 
 // styling 
 const Wrapper= styled(Box)`
@@ -30,12 +33,18 @@ height:32px;
     
 const CustomButtons = () => {
   const [open, setOpen] = useState(false)
+  const {account,setAccount} = useContext(LoginContext)
   const openLogin=()=>{
     setOpen(true)
   }
   return (
    <Wrapper>
+    {
+      // doing this to give style to the name that will appear on the navbar, handling the Proile code in Profile.jsx file , initially it was this : <Typography>{account}</Typography>
+
+      account? <Profile account= {account} setAccount={setAccount}/> :
     <LoginButton variant="contained" onClick={()=>openLogin()}>Login</LoginButton>
+    }
     <Typography style={{ marginTop: 3, width: 135 }}>
         Become a Seller
     </Typography>
