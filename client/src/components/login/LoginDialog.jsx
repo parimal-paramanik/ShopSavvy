@@ -3,6 +3,7 @@ import {Dialog,Box,TextField, Button, Typography,styled} from  "@mui/material"
 // importing signup api
 
 import { SignupUser } from '../../service/api'
+import { LoginUser } from '../../service/api'
 import { LoginContext } from '../../context/ContextProvider'
 const Conmponent= styled(Box)`
     height: 70vh;
@@ -72,6 +73,7 @@ const initialaccountview={
   },
 }
 
+// signup field
 const signupfield= {
   firstname : "",
   lastname:"",
@@ -79,9 +81,16 @@ const signupfield= {
   email:"",
   password:""
 }
+//login field
+const loginfield= {
+  username : "",
+  password: ""
+}
+
 const LoginDialog = ({open,setOpen}) => {
  const [account,toggleAccount]= useState(initialaccountview.login)
  const [signup,setSignup]= useState(signupfield)
+ const [login, setLogin] = useState(loginfield)
 
  // setting the user in context
   const {setAccount}= useContext(LoginContext)
@@ -101,6 +110,9 @@ const LoginDialog = ({open,setOpen}) => {
         setSignup({...signup,[e.target.name]:e.target.value})
         // console.log(signup)
   }
+  const loginfieldChanged=(event)=>{
+    setLogin({...login , [event.target.name]: event.target.value})
+}
 
   // api fetch signup /login
   const signupApi=async()=>{
@@ -109,6 +121,12 @@ const LoginDialog = ({open,setOpen}) => {
     dialogClose()
     // console.log(data.data.msg)
     setAccount(signup.firstname)
+  }
+  const loginApi= async()=>{
+       const data= await LoginUser(login)
+      //  if(!data) return
+      //  dialogClose()
+
   }
 
   return (
@@ -122,10 +140,10 @@ const LoginDialog = ({open,setOpen}) => {
         {
          account.view === "login"? 
         <Wrapper>
-        <TextField  variant="standard" label="enter email address." />
-        <TextField  variant="standard" label="enter  password" />
+        <TextField onChange={(e)=>loginfieldChanged(e)} name= "username" variant="standard" label="enter email address." />
+        <TextField onChange={(e)=> loginfieldChanged(e)} name= "password" variant="standard" label="enter  password" />
         <Text>By continueing, you agree to shopshavvy's term of use and privacy policy </Text>
-        <LoginButton>Login</LoginButton>
+        <LoginButton onClick={()=> loginApi()}>Login</LoginButton>
         <Typography style={{textAlign:'center'}}>OR</Typography>
         <RequestOTP>Request OTP</RequestOTP>
         <CreateAccount onClick={()=>togglelogintosignup()}>New to shopshavvy ? Create an account</CreateAccount>
