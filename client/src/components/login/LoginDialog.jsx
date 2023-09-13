@@ -105,6 +105,7 @@ const LoginDialog = ({ open, setOpen }) => {
   const dialogClose = () => {
     setOpen(false)
     toggleAccount(initialaccountview.login)
+      setError(false)
   }
   // toggling between signup and login div
   const togglelogintosignup = () => {
