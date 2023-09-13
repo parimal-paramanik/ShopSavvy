@@ -1,6 +1,7 @@
 
 import express from "express";
 import bcrypt from "bcrypt"
+import jwt from "jsonwebtoken"
 import userModel from "../Model/userModel.js"
 
 // signup of a user 
@@ -30,16 +31,20 @@ export const Login=async(request, response)=>{
      try {
         const {username,  password } = request.body;
         const user= await userModel.findOne({username})
-        if(!user) return response.send({ message: 'login first' });
+        if(!user) return response.status(400).send({ message: 'login first' });
         const comparepassword= bcrypt.compareSync(password,user.password )
-        if(!comparepassword) return response.status(400).send({ msg: "Wrong credentials" });
+        if(!comparepassword) return response.status(400).send({ msg: "Wrong credentials"});
 
         const accessToken = jwt.sign(
             { userId: user._id },
             process.env.JWT_ACCESS_TOKEN_SECRET_KEY,
-            { expiresIn: "24hr" }
+            // { expiresIn: "24hr" }
           );
+          response.status(200).send({ msg: "Login success", accessToken, user: user});
+          console.log("login success")
      } catch (error) {
-        
+        response.status(500).send({ msg: error.message } , "error");
      }
+    
+    
 }

@@ -1,11 +1,11 @@
-import React,{useState, useContext} from 'react'
-import {Dialog,Box,TextField, Button, Typography,styled} from  "@mui/material"
+import React, { useState, useContext } from 'react'
+import { Dialog, Box, TextField, Button, Typography, styled } from "@mui/material"
 // importing signup api
 
 import { SignupUser } from '../../service/api'
 import { LoginUser } from '../../service/api'
 import { LoginContext } from '../../context/ContextProvider'
-const Conmponent= styled(Box)`
+const Conmponent = styled(Box)`
     height: 70vh;
     width: 90vh;
     padding: 0;
@@ -21,7 +21,7 @@ const Image = styled(Box)`
         font-weight: 600
     }
 `
-const Wrapper= styled(Box)`
+const Wrapper = styled(Box)`
 padding: 10px 35px;
 display: flex;
 flex: 1;
@@ -59,107 +59,121 @@ const CreateAccount = styled(Typography)`
     font-size: 14px;
     cursor: pointer
 `
-
-const initialaccountview={
-  login:{
-    view:"login",
-    heading:"login",
-    subheading:"Give access to your Orders Wishlists and recomendations"
+const Error = styled(Typography)`
+    font-size: 10px;
+    color: #ff6161;
+    line-height: 0;
+    margin-top: 10px;
+    font-weight: 600;
+`
+const initialaccountview = {
+  login: {
+    view: "login",
+    heading: "login",
+    subheading: "Give access to your Orders Wishlists and recomendations"
   },
-  signup:{
-    view:"signup",
-    heading:"signup",
-    subheading:"welocome to shopshavvy"
+  signup: {
+    view: "signup",
+    heading: "signup",
+    subheading: "welocome to shopshavvy"
   },
 }
 
 // signup field
-const signupfield= {
-  firstname : "",
-  lastname:"",
-  username:"",
-  email:"",
-  password:""
+const signupfield = {
+  firstname: "",
+  lastname: "",
+  username: "",
+  email: "",
+  password: ""
 }
 //login field
-const loginfield= {
-  username : "",
+const loginfield = {
+  username: "",
   password: ""
 }
 
-const LoginDialog = ({open,setOpen}) => {
- const [account,toggleAccount]= useState(initialaccountview.login)
- const [signup,setSignup]= useState(signupfield)
- const [login, setLogin] = useState(loginfield)
+const LoginDialog = ({ open, setOpen }) => {
+  const [account, toggleAccount] = useState(initialaccountview.login)
+  const [signup, setSignup] = useState(signupfield)
+  const [login, setLogin] = useState(loginfield)
+  const [error,setError]= useState(false)
 
- // setting the user in context
-  const {setAccount}= useContext(LoginContext)
-   
-  const dialogClose= ()=>{
+  // setting the user in context
+  const { setAccount } = useContext(LoginContext)
+
+  const dialogClose = () => {
     setOpen(false)
     toggleAccount(initialaccountview.login)
   }
   // toggling between signup and login div
-  const togglelogintosignup=()=>{
+  const togglelogintosignup = () => {
     toggleAccount(initialaccountview.signup)
   }
-  const togglesignuptologin=()=>{
+  const togglesignuptologin = () => {
     toggleAccount(initialaccountview.login)
   }
-  const signupfieldChanged=(e)=>{
-        setSignup({...signup,[e.target.name]:e.target.value})
-        // console.log(signup)
+  const signupfieldChanged = (e) => {
+    setSignup({ ...signup, [e.target.name]: e.target.value })
+    // console.log(signup)
   }
-  const loginfieldChanged=(event)=>{
-    setLogin({...login , [event.target.name]: event.target.value})
-}
+  const loginfieldChanged = (event) => {
+    setLogin({ ...login, [event.target.name]: event.target.value })
+  }
 
   // api fetch signup /login
-  const signupApi=async()=>{
-    const data=  await SignupUser(signup)
-    if(!data) return
+  const signupApi = async () => {
+    const data = await SignupUser(signup)
+    if (!data) return
     dialogClose()
     // console.log(data.data.msg)
     setAccount(signup.firstname)
   }
-  const loginApi= async()=>{
-       const data= await LoginUser(login)
-      //  if(!data) return
-      //  dialogClose()
-
-  }
+  const loginApi = async () => {
+    const data = await LoginUser(login)
+    // if (!data) return 
+      if (data.status === 200) {
+        dialogClose()
+        setAccount(data.data.user.firstname)
+        //  console.log(data)
+      }else{
+         setError(true)
+      }
+    } 
+  
 
   return (
-    <Dialog open= {open} onClose={dialogClose} PaperProps={{ sx: { maxWidth: 'unset' } }}>
+    <Dialog open={open} onClose={dialogClose} PaperProps={{ sx: { maxWidth: 'unset' } }}>
       <Conmponent>
-        <Box style={{display:'flex',height:"100%"}}>
-        <Image>
-          <Typography variant='h5'>{account.heading}</Typography>
-          <Typography  style={{marginTop:20}}>{account.subheading}</Typography>
-        </Image>
-        {
-         account.view === "login"? 
-        <Wrapper>
-        <TextField onChange={(e)=>loginfieldChanged(e)} name= "username" variant="standard" label="enter email address." />
-        <TextField onChange={(e)=> loginfieldChanged(e)} name= "password" variant="standard" label="enter  password" />
-        <Text>By continueing, you agree to shopshavvy's term of use and privacy policy </Text>
-        <LoginButton onClick={()=> loginApi()}>Login</LoginButton>
-        <Typography style={{textAlign:'center'}}>OR</Typography>
-        <RequestOTP>Request OTP</RequestOTP>
-        <CreateAccount onClick={()=>togglelogintosignup()}>New to shopshavvy ? Create an account</CreateAccount>
-        </Wrapper>
-        :
-        <Wrapper>
-        <TextField onChange={(e)=>signupfieldChanged(e)} name='firstname'  variant="standard"  label="enter your firstname" />
-        <TextField onChange={(e)=>signupfieldChanged(e)} name='lastname'  variant="standard" label="enter your lastname" />
-        <TextField onChange={(e)=>signupfieldChanged(e)} name='username'  variant="standard" label="enter your username" />
-        <TextField onChange={(e)=>signupfieldChanged(e)} name='email'  variant="standard" label="enter your email address" />
-        <TextField onChange={(e)=>signupfieldChanged(e)}  name='password'  variant="standard" label="enter your  password" />
-        {/* <TextField  variant="standard" label="enter your  mobile" /> */}
-        <LoginButton onClick={()=>signupApi()}>Signup</LoginButton>
-        <CreateAccount onClick={()=>togglesignuptologin()}>Already a member ? click to login</CreateAccount>
-        </Wrapper>
-}
+        <Box style={{ display: 'flex', height: "100%" }}>
+          <Image>
+            <Typography variant='h5'>{account.heading}</Typography>
+            <Typography style={{ marginTop: 20 }}>{account.subheading}</Typography>
+          </Image>
+          {
+            account.view === "login" ?
+              <Wrapper>
+                <TextField onChange={(e) => loginfieldChanged(e)} name="username" variant="standard" label="enter vald username." />
+                { error && <Error>please enter valid username or password</Error>}
+                <TextField onChange={(e) => loginfieldChanged(e)} name="password" variant="standard" label="enter  password" />
+                <Text>By continueing, you agree to shopshavvy's term of use and privacy policy </Text>
+                <LoginButton onClick={() => loginApi()}>Login</LoginButton>
+                <Typography style={{ textAlign: 'center' }}>OR</Typography>
+                <RequestOTP>Request OTP</RequestOTP>
+                <CreateAccount onClick={() => togglelogintosignup()}>New to shopshavvy ? Create an account</CreateAccount>
+              </Wrapper>
+              :
+              <Wrapper>
+                <TextField onChange={(e) => signupfieldChanged(e)} name='firstname' variant="standard" label="enter your firstname" />
+                <TextField onChange={(e) => signupfieldChanged(e)} name='lastname' variant="standard" label="enter your lastname" />
+                <TextField onChange={(e) => signupfieldChanged(e)} name='username' variant="standard" label="enter your username" />
+                <TextField onChange={(e) => signupfieldChanged(e)} name='email' variant="standard" label="enter your email address" />
+                <TextField onChange={(e) => signupfieldChanged(e)} name='password' variant="standard" label="enter your  password" />
+                {/* <TextField  variant="standard" label="enter your  mobile" /> */}
+                <LoginButton onClick={() => signupApi()}>Signup</LoginButton>
+                <CreateAccount onClick={() => togglesignuptologin()}>Already a member ? click to login</CreateAccount>
+              </Wrapper>
+          }
         </Box>
       </Conmponent>
     </Dialog>
