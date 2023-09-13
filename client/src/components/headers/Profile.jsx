@@ -21,6 +21,7 @@ const handleClose= ()=>{
 }
 const logoutUser = ()=>{
   setAccount("")
+  
 }
 
   return (
