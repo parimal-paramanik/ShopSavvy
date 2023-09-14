@@ -43,8 +43,8 @@ export const Login=async(request, response)=>{
           response.status(200).send({ msg: "Login success", accessToken, user: user});
           console.log("login success")
      } catch (error) {
-        response.status(500).send({ msg: error.message } , "error");
+        response.status(500).send({ msg: error.message });
      }
-    
+     // routes
     
 }
