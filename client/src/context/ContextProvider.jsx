@@ -5,6 +5,7 @@ import { createContext,useState } from "react";
 const DataProvider= ({children})=>{
  const [account, setAccount]= useState("")
     return (
+      
           <LoginContext.Provider  value={{
             account,
             setAccount
