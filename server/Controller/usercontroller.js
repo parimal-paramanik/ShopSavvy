@@ -12,7 +12,7 @@ export const Signup = async (request, response) => {
             // console.log("all field required")
             return response.status(400).send({ msg: "All feilds are required" });
         }
-        const exist = await userModel.findOne({ username: username });
+        const exist = await userModel.findOne({ username: username});
         if (exist) {
             // console.log("user already exists")
             return response.send({ msg: 'User already exist' });

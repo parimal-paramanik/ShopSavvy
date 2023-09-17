@@ -140,7 +140,7 @@ const LoginDialog = ({ open, setOpen }) => {
     // if (!data) return 
       if (data.status === 200) {
         dialogClose()
-         console.log(data)
+        //  console.log(data)
         setAccount(data.data.username)
       }else{
          setError(true)
@@ -159,7 +159,7 @@ const LoginDialog = ({ open, setOpen }) => {
           {
             account.view === "login" ?
               <Wrapper>
-                <TextField onChange={(e) => loginfieldChanged(e)} name="username" variant="standard" label="enter vald username." />
+                <TextField onChange={(e) => loginfieldChanged(e)} name="username" variant="standard" label="enter valid username." />
                 { error && <Error>please enter valid username or password</Error>}
                 <TextField onChange={(e) => loginfieldChanged(e)} name="password" variant="standard" label="enter  password" />
                 <Text>By continueing, you agree to shopshavvy's term of use and privacy policy </Text>
