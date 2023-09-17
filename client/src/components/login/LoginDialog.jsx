@@ -125,18 +125,23 @@ const LoginDialog = ({ open, setOpen }) => {
   // api fetch signup /login
   const signupApi = async () => {
     const data = await SignupUser(signup)
-    if (!data) return
+    // console.log(data)
+    if(!data){
+      return
+    } else if (data.data.msg === "User already exist"){
+      alert(data.data.msg)
+    }
     dialogClose()
     // console.log(data.data.msg)
-    setAccount(signup.firstname)
+    setAccount(signup.username)
   }
   const loginApi = async () => {
     const data = await LoginUser(login)
     // if (!data) return 
       if (data.status === 200) {
         dialogClose()
-        setAccount(data.data.user.firstname)
-        //  console.log(data)
+         console.log(data)
+        setAccount(data.data.username)
       }else{
          setError(true)
       }
