@@ -1,4 +1,2 @@
 # ShopSavvy
-shopshavvy
 
-shopshavvy
