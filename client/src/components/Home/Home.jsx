@@ -2,7 +2,9 @@ import React, { useEffect } from 'react'
 import{Box, styled} from "@mui/material"
 import Navbar from './Navbar'
 import Banner from './Banner'
+import Slide from './Slide'
 import { getProducts } from '../../redux/actions/productActions'
+
 import { useDispatch,useSelector } from 'react-redux'
 const Component = styled(Box)`
     padding: 7px 7px;
@@ -27,6 +29,7 @@ const Home = () => {
    <Navbar/>
    <Component>
    <Banner/>
+   <Slide products= {products}></Slide>
    </Component>
    </>
   )
