@@ -1,6 +1,35 @@
 
 import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
+import Countdown from 'react-countdown';
+import { Button, Divider, Box, Typography, styled } from '@mui/material';
+// styles 
+const Component = styled(Box)`
+    margin-top: 10px;
+    background: #FFFFFF;
+`;
+const TimeStyles = styled(Box)`
+    display: flex;    
+    padding: 15px 20px;
+`
+const TimerBox = styled(Box)`
+    // color: #7f7f7f;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+`;
+const DealText = styled(Typography)`
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 32px;
+    margin-right: 25px;
+`
+const ViewAllButton = styled(Button)`
+    margin-left: auto;
+    // background-color: #2874f0;
+    // border-radius: 2px;
+    // font-size: 13px;
+`;
 // imporing responsiveness
 const responsive = {
     desktop: {
@@ -17,8 +46,28 @@ const responsive = {
     }
   };
  const Slide= ({products})=>{
+  const countdownUrl = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
+  // rendered to modify the countDown
+
+  const renderer = ({ hours, minutes, seconds }) => {
+    return <Box variant="span">{hours} : {minutes} : {seconds}  remaining</Box>;
+};
+
     return (
- <Carousel
+ <Component>
+  <TimeStyles>
+    <DealText>
+      Deal of The Day
+    </DealText>
+    <TimerBox>
+      <img src= {countdownUrl} alt="countdown watch"  style={{width: 20}}/>
+      <Countdown date={Date.now() + 8.64e+7} renderer = {renderer} />
+    </TimerBox>
+      <ViewAllButton variant="contained" >all Deal</ViewAllButton>
+
+  </TimeStyles>
+  <Divider/>
+  <Carousel
         responsive={responsive}
         swipeable={false}
         draggable={false}
@@ -39,6 +88,7 @@ const responsive = {
         )
     }
  </Carousel>
+ </Component>
     )
 }
 
