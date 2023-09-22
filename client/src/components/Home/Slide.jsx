@@ -24,12 +24,16 @@ const DealText = styled(Typography)`
     line-height: 32px;
     margin-right: 25px;
 `
-const ViewAllButton = styled(Button)`
+const Btn = styled(Button)`
     margin-left: auto;
     // background-color: #2874f0;
-    // border-radius: 2px;
-    // font-size: 13px;
+    border-radius: 3px;
+    font-size: 12px;
 `;
+const Image = styled('img')({
+  width: 'auto',
+  height: 150
+})
 // imporing responsiveness
 const responsive = {
     desktop: {
@@ -63,7 +67,7 @@ const responsive = {
       <img src= {countdownUrl} alt="countdown watch"  style={{width: 20}}/>
       <Countdown date={Date.now() + 8.64e+7} renderer = {renderer} />
     </TimerBox>
-      <ViewAllButton variant="contained" >all Deal</ViewAllButton>
+      <Btn variant="contained" >all Deal</Btn>
 
   </TimeStyles>
   <Divider/>
@@ -83,9 +87,11 @@ const responsive = {
         itemClass="carousel-item-padding-40-px"
   >
     {
-        products.map((data,index)=>
-          <img  alt="productImg" key={index} src={data.url} />
-        )
+        products.map((data,index)=>(
+          <Box  textAlign="center" style={{ padding: '25px 15px' }}>
+          <Image  alt="productImg" key={index} src={data.url} />
+          </Box>
+        ))
     }
  </Carousel>
  </Component>

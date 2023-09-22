@@ -30,6 +30,8 @@ const Home = () => {
    <Component>
    <Banner/>
    <Slide products= {products}></Slide>
+   <Slide products= {products}></Slide>
+   
    </Component>
    </>
   )
