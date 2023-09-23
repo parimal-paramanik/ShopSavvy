@@ -34,6 +34,10 @@ const Image = styled('img')({
   width: 'auto',
   height: 150
 })
+const Text = styled(Typography)`
+    font-size: 14px;
+    margin-top: 5px
+`
 // imporing responsiveness
 const responsive = {
     desktop: {
@@ -49,7 +53,7 @@ const responsive = {
       items: 1
     }
   };
- const Slide= ({products})=>{
+ const Slide= ({products, title})=>{
   const countdownUrl = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
   // rendered to modify the countDown
 
@@ -61,7 +65,7 @@ const responsive = {
  <Component>
   <TimeStyles>
     <DealText>
-      Deal of The Day
+      {title}
     </DealText>
     <TimerBox>
       <img src= {countdownUrl} alt="countdown watch"  style={{width: 20}}/>
@@ -88,8 +92,11 @@ const responsive = {
   >
     {
         products.map((data,index)=>(
-          <Box  textAlign="center" style={{ padding: '25px 15px' }}>
+          <Box key={index} textAlign="center" style={{ padding: '25px 15px' }}>
           <Image  alt="productImg" key={index} src={data.url} />
+          <Text style={{ fontWeight: 600, color: '#212121' }}>{data.title.shortTitle}</Text>
+          <Text style={{ color: '#008000' }}>{data.discount}</Text>
+          <Text style={{ color: '#212121', opacity: '.7' }}>{data.tagline}</Text>
           </Box>
         ))
     }

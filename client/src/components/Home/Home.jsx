@@ -29,8 +29,10 @@ const Home = () => {
    <Navbar/>
    <Component>
    <Banner/>
-   <Slide products= {products}></Slide>
-   <Slide products= {products}></Slide>
+   <Slide products= {products} title= "Deal of the Day"></Slide>
+   <Slide products= {products} title = "Puja Special"></Slide>
+   <Slide products= {products} title = "Best Quality"></Slide>
+   <Slide products= {products} title = "Offer Dhamakedar"></Slide>
    
    </Component>
    </>

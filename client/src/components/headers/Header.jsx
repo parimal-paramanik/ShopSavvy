@@ -6,7 +6,7 @@ import Search from './Search'
 import CustomButtons from './CustomButtons'
 
 const StyledHeader = styled(AppBar)`
-background: #2874f0;
+background: green;
 height: 55px;
 box-Shadow:none;
 marginTop:10;
