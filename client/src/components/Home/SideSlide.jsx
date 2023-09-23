@@ -8,7 +8,7 @@ const Leftslide= styled(Box)`
 const Rightslide= styled(Box)`
 width: 16%;
 padding :5px ;
-margin-top :10px;
+margin-top :5px;
 margin-left :20px;
 
 
@@ -29,7 +29,7 @@ const SideSlide = ({ products, title, watch }) => {
             </Leftslide>
               
             <Rightslide>
-                <img src= {sideimgUrl}  alt="sideimg" style={{width: 240}}/>
+                <img src= {sideimgUrl}  alt="sideimg" style={{width: 235}}/>
             </Rightslide>
         </Component>
     )
