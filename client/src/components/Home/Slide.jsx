@@ -53,7 +53,7 @@ const responsive = {
       items: 1
     }
   };
- const Slide= ({products, title})=>{
+ const Slide= ({products, title,watch})=>{
   const countdownUrl = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
   // rendered to modify the countDown
 
@@ -67,10 +67,12 @@ const responsive = {
     <DealText>
       {title}
     </DealText>
-    <TimerBox>
-      <img src= {countdownUrl} alt="countdown watch"  style={{width: 20}}/>
-      <Countdown date={Date.now() + 8.64e+7} renderer = {renderer} />
-    </TimerBox>
+    {watch && (
+          <TimerBox>
+            <img src={countdownUrl} alt="countdown watch" style={{ width: 20 }} />
+            <Countdown date={Date.now() + 8.64e+7} renderer={renderer} />
+          </TimerBox>
+        )}
       <Btn variant="contained" >all Deal</Btn>
 
   </TimeStyles>

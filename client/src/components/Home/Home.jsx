@@ -14,7 +14,7 @@ const Component = styled(Box)`
 const Home = () => {
   // destructering products from getproduct 
   // const {products}= getProducts
-
+  // const [watch,setWatch] = useState(false)
     const {products} = useSelector(state =>state.getProducts)
     console.log(products)
 
@@ -29,7 +29,7 @@ const Home = () => {
    <Navbar/>
    <Component>
    <Banner/>
-   <Slide products= {products} title= "Deal of the Day"></Slide>
+   <Slide products= {products} title= "Deal of the Day" watch = {true} ></Slide>
    <Slide products= {products} title = "Puja Special"></Slide>
    <Slide products= {products} title = "Best Quality"></Slide>
    <Slide products= {products} title = "Offer Dhamakedar"></Slide>
