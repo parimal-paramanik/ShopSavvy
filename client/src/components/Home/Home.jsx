@@ -3,7 +3,9 @@ import{Box, styled} from "@mui/material"
 import Navbar from './Navbar'
 import Banner from './Banner'
 import Slide from './Slide'
+import SideSlide from './SideSlide'
 import { getProducts } from '../../redux/actions/productActions'
+
 
 import { useDispatch,useSelector } from 'react-redux'
 const Component = styled(Box)`
@@ -15,6 +17,7 @@ const Home = () => {
   // destructering products from getproduct 
   // const {products}= getProducts
   // const [watch,setWatch] = useState(false)
+
     const {products} = useSelector(state =>state.getProducts)
     console.log(products)
 
@@ -29,10 +32,11 @@ const Home = () => {
    <Navbar/>
    <Component>
    <Banner/>
-   <Slide products= {products} title= "Deal of the Day" watch = {true} ></Slide>
-   <Slide products= {products} title = "Puja Special"></Slide>
-   <Slide products= {products} title = "Best Quality"></Slide>
-   <Slide products= {products} title = "Offer Dhamakedar"></Slide>
+      <SideSlide products= {products} title = "Offer Dhamakedar" watch = {true} />
+      <Slide products= {products} title = "Recomended for You"></Slide>
+      <Slide products= {products} title = "Mens Style"></Slide>
+      <Slide products= {products} title = "Women Styles"></Slide>
+      <Slide products= {products} title= "Deal of the Day"></Slide> 
    
    </Component>
    </>

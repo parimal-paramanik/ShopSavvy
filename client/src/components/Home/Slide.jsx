@@ -67,12 +67,12 @@ const responsive = {
     <DealText>
       {title}
     </DealText>
-    {watch && (
+    {watch && 
           <TimerBox>
             <img src={countdownUrl} alt="countdown watch" style={{ width: 20 }} />
             <Countdown date={Date.now() + 8.64e+7} renderer={renderer} />
           </TimerBox>
-        )}
+        }
       <Btn variant="contained" >all Deal</Btn>
 
   </TimeStyles>
