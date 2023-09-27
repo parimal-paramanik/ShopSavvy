@@ -5,6 +5,7 @@ import Banner from './Banner'
 import Slide from './Slide'
 import SideSlide from './SideSlide'
 import { getProducts } from '../../redux/actions/productActions'
+import Midsection from './Midsection'
 
 
 import { useDispatch,useSelector } from 'react-redux'
@@ -33,9 +34,12 @@ const Home = () => {
    <Component>
    <Banner/>
       <SideSlide products= {products} title = "Offer Dhamakedar" watch = {true} />
-      <Slide products= {products} title = "Recomended for You"></Slide>
+      <Midsection  />
+      <Slide products= {products} title = "Recomended"></Slide>
+      <Midsection/>
       <Slide products= {products} title = "Mens Style"></Slide>
       <Slide products= {products} title = "Women Styles"></Slide>
+      <Midsection />
       <Slide products= {products} title= "Deal of the Day"></Slide> 
    
    </Component>
