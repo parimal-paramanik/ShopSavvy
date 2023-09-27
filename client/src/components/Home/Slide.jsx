@@ -38,6 +38,12 @@ const Text = styled(Typography)`
     font-size: 14px;
     margin-top: 5px
 `
+const RenderTimer = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.down('sm')]: {
+      display: 'none'
+  }
+}));
+
 // imporing responsiveness
 const responsive = {
     desktop: {
@@ -54,11 +60,11 @@ const responsive = {
     }
   };
  const Slide= ({products, title,watch})=>{
-  const countdownUrl = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
+  // const countdownUrl = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
   // rendered to modify the countDown
 
   const renderer = ({ hours, minutes, seconds }) => {
-    return <Box variant="span">{hours} : {minutes} : {seconds}  remaining</Box>;
+    return <RenderTimer variant="span">{hours} : {minutes} : {seconds} left</RenderTimer>;
 };
 
     return (
@@ -69,11 +75,11 @@ const responsive = {
     </DealText>
     {watch && 
           <TimerBox>
-            <img src={countdownUrl} alt="countdown watch" style={{ width: 20 }} />
+            {/* <img src={countdownUrl} alt="countdown watch" style={{ width: 20 }} /> */}
             <Countdown date={Date.now() + 8.64e+7} renderer={renderer} />
           </TimerBox>
         }
-      <Btn variant="contained" >all Deal</Btn>
+      <Btn variant="contained" >All Deals</Btn>
 
   </TimeStyles>
   <Divider/>

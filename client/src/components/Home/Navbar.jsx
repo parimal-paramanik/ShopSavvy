@@ -2,12 +2,14 @@ import React from 'react'
 import { Box, Typography, styled } from "@mui/material"
 import { navData } from '../../constant/data'
 
-const Component= styled(Box)`
-   display:flex;
-   margin:55px 130px 0px 130px;
-   justify-content:space-between;
-
-`
+const Component= styled(Box)(({theme})=> ({
+   display:"flex",
+   margin:"55px 130px 0px 130px",
+   justifyContent:"space-between",
+   [theme.breakpoints.down('lg')] :{
+    display:"none"
+   }
+}))
 const Container= styled(Box)`
 margin:12px 8px;
 text-align:center;

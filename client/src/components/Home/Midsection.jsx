@@ -6,6 +6,7 @@ const ImageURL = [
     'https://rukminim1.flixcart.com/flap/960/960/image/084789479074d2b2.jpg'
 ];
 
+
 const Wrapper = styled(Grid)`
     display: flex;
     margin-top: 20px;
@@ -14,32 +15,31 @@ const Wrapper = styled(Grid)`
 
 const Image = styled('img')(({ theme }) => ({ 
     display: 'flex',
-    marginTop: 10,
+    marginTop: 20,
     justifyContent: 'space-between',
     width: '100%',
     [theme.breakpoints.down('md')]: {
-        objectFit: 'cover',
-        height: 130
-        // width: '100%',
+        // objectFit: 'cover',
+        height: 120
     }
 }));
 
-const Midsection = () => {
+const MidSection = () => {
     const url = 'https://rukminim1.flixcart.com/flap/3006/433/image/4789bc3aefd54494.jpg?q=50';
     return (
         <>
             <Wrapper lg={12} sm={12} md={12} xs={12} container>
                 {
-                    ImageURL.map((image,index) => (
-                        <Grid key={index} item lg={4} md={4} sm={12} xs={12}  >
+                    ImageURL.map(image => (
+                        <Grid item lg={4} md={4} sm={12} xs={12}>
                             <img src={image} style={{ width: '100%' }} alt='kuchvdede' />
                         </Grid>
                     ))
                 }
             </Wrapper>
-            <Image src={url} alt='kuchv' />
+            <Image src={url} alt='kuchv'/>
         </>
     )
 }
 
-export default Midsection;
+export default MidSection;

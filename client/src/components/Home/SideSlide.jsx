@@ -2,18 +2,27 @@
 import { Box ,styled} from "@mui/material"
 import Slide from "./Slide"
 // styles will be here 
-const Leftslide= styled(Box)`
-    width:82%;
-`
-const Rightslide= styled(Box)`
-width: 16%;
-padding :5px ;
-margin-top :5px;
-margin-left :20px;
+const Leftslide= styled(Box)(({ theme}) => ({
+    width: '83%',
+    [theme.breakpoints.down('md')]: {
+        width: '100%'
+    }
+}))
+
+const Rightslide= styled(Box)(({ theme}) => ({
+    marginTop: 10,
+    background: '#FFFFFF',
+    width: '17%',
+    marginLeft: 10,
+    padding: 5,
+    textAlign: 'center',
+    [theme.breakpoints.down('md')]: {
+        display: 'none'
+    }
+}));
 
 
 
-`
 const Component = styled(Box)`
   display:flex;
 `

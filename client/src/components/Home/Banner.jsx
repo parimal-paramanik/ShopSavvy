@@ -21,11 +21,15 @@ const responsive = {
     }
   };
 
-  const Image = styled('img')({
-    width: "100%",
+  const Image = styled('img')(({ theme }) => ({
+    width: '100%',
     height: 280,
-  }
-)
+    [theme.breakpoints.down('md')]: {
+        objectFit: 'cover',
+        height: 170,
+        // width:"90%"
+    }
+}));
 
 const Banner = () => {
   return (
