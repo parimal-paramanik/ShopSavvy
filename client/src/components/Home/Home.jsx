@@ -20,13 +20,18 @@ const Home = () => {
   // const [watch,setWatch] = useState(false)
 
     const {products} = useSelector(state =>state.getProducts)
-    console.log(products)
+    console.log({products:products})
 
   const dispatch = useDispatch()
 
   useEffect(()=>{
     dispatch(getProducts())
   },[dispatch])
+ 
+  // filter out only those products which has a id of "product2"   
+  const recommendedProducts = products.filter((product) => {
+    return product.id === "product2" ;
+  });
   
   return (
     <>
@@ -35,7 +40,7 @@ const Home = () => {
    <Banner/>
       <SideSlide products= {products} title = "Offer Dhamakedar" watch = {true} />
       <Midsection  />
-      <Slide products= {products} title = "Recomended"></Slide>
+      <Slide products= {recommendedProducts} title = "Recomended"></Slide>
       <Midsection/>
       <Slide products= {products} title = "Mens Style"></Slide>
       <Slide products= {products} title = "Women Styles"></Slide>
