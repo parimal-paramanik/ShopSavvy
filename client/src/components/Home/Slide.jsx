@@ -31,7 +31,7 @@ const Btn = styled(Button)`
     font-size: 12px;
 `;
 const Image = styled('img')({
-  width: 'auto',
+  width: "auto",
   height: 150
 })
 const Text = styled(Typography)`
