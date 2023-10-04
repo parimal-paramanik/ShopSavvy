@@ -29,8 +29,17 @@ const Home = () => {
   },[dispatch])
  
   // filter out only those products which has a id of "product2"   
-  const recommendedProducts = products.filter((product) => {
-    return product.id === "product2" ;
+  const allproducts = products.filter((product) => {
+    return product.type === "all" ;
+  });
+  const menproducts = products.filter((product) => {
+    return product.type === "men" ;
+  });
+  const womenproducts = products.filter((product) => {
+    return product.type === "women" ;
+  });
+  const electronic = products.filter((product) => {
+    return product.type === "all" ;
   });
   
   return (
@@ -38,14 +47,13 @@ const Home = () => {
    <Navbar/>
    <Component>
    <Banner/>
-      <SideSlide products= {products} title = "Offer Dhamakedar" watch = {true} />
+      <SideSlide products= {allproducts} title = "Offer Dhamakedar" watch = {true} />
       <Midsection  />
-      <Slide products= {recommendedProducts} title = "Recomended"></Slide>
+      <Slide products= {menproducts} title = "Mens Style"></Slide>
       <Midsection/>
-      <Slide products= {products} title = "Mens Style"></Slide>
-      <Slide products= {products} title = "Women Styles"></Slide>
+      <Slide products= {womenproducts} title = "Women Styles"></Slide>
       <Midsection />
-      <Slide products= {products} title= "Deal of the Day"></Slide> 
+      <Slide products= {electronic} title= "Deal of the Day"></Slide> 
    
    </Component>
    </>
