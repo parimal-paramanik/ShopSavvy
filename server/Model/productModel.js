@@ -9,7 +9,8 @@ const productSchema= mongoose.Schema({
     quantity: Number,
     description: String,
     discount: String,
-    tagline: String
+    tagline: String,
+    type:String
 })
 
 const productModel= mongoose.model("product",productSchema)
