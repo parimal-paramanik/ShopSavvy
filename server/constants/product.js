@@ -176,7 +176,7 @@ export const products = [
     {
         id: 'product10',
         type:"men",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/shoe/v/m/b/-original-imagt5w6bgk9fgkk.jpeg?q=70',
+        url: 'https://rukminim2.flixcart.com/image/130/130/xif0q/shoe/v/m/b/-original-imagt5w6bgk9fgkk.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/shoe/v/m/b/-original-imagt5w6bgk9fgkk.jpeg?q=70',
         title: {
             shortTitle: 'Men shoes',
@@ -271,7 +271,7 @@ export const products = [
         tagline: 'Grab Now!'
     },
     {
-        id: 'product15',
+        id: 'product19',
         type:"women",
         url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/jean/z/s/f/40-basic-jns-15-ice-blue-justfaith-original-imafs2z6tzzz2cdy-bb.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/jean/z/s/f/40-basic-jns-15-ice-blue-justfaith-original-imafs2z6tzzz2cdy-bb.jpeg?q=70',
