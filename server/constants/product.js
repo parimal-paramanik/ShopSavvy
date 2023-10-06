@@ -2,7 +2,7 @@ export const products = [
     // all products 
     {
         id: 'product1',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/150/150/kxqg2a80/chopper/5/p/j/2022-new-black-arcane-original-imaga4dnvhju3dfs.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/kxqg2a80/chopper/5/p/j/2022-new-black-arcane-original-imaga4dnvhju3dfs.jpeg?q=70',
         title: {
@@ -21,7 +21,7 @@ export const products = [
     },
     {
         id: 'product2',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/150/150/kkbh8cw0pkrrdj/sandwich-maker-refurbished/1/7/w/c-ktg02kgp-dbh-kenstar-original-imafztbquhbdahzm.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/kkbh8cw0pkrrdj/sandwich-maker-refurbished/1/7/w/c-ktg02kgp-dbh-kenstar-original-imafztbquhbdahzm.jpeg?q=70',
         title: {
@@ -40,7 +40,7 @@ export const products = [
     },
     {
         id: 'product3',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/150/150/kkyc9zk0/bar/z/v/t/power-twister-heavy-duty-bar-exercise-equipment-for-arm-original-imagy6rmzc9adzgg.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/kkyc9zk0/bar/z/v/t/power-twister-heavy-duty-bar-exercise-equipment-for-arm-original-imagy6rmzc9adzgg.jpeg?q=70',
         title: {
@@ -59,7 +59,7 @@ export const products = [
     },
     {
         id: 'product4',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/612/612/l5ld8y80/smartwatch/r/q/t/-original-imagg8dksgct9hxg.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/smartwatch/3/c/v/-original-imagrgzbpdffggpm.jpeg?q=70',
         title: {
@@ -78,7 +78,7 @@ export const products = [
     },
     {
         id: 'product5',
-        type:"all",
+        type: "all",
         url: 'https://rukminim1.flixcart.com/image/416/416/k3uhhu80/hair-dryer/n/m/t/nova-2800-w-professional-nhp-8220-original-imafmvwfhmzsxdrw.jpeg?q=70',
         detailUrl: 'https://rukminim1.flixcart.com/image/416/416/k3uhhu80/hair-dryer/n/m/t/nova-2800-w-professional-nhp-8220-original-imafmvwfhmzsxdrw.jpeg?q=70',
         title: {
@@ -97,7 +97,7 @@ export const products = [
     },
     {
         id: 'product6',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/312/312/k6v2ykw0/fan/y/e/v/sameera-400-mm-table-fan-400-havells-original-imafp8j9mkghf4bk.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/k6v2ykw0/fan/y/e/v/sameera-400-mm-table-fan-400-havells-original-imafp8j9mkghf4bk.jpeg?q=70',
         title: {
@@ -116,7 +116,7 @@ export const products = [
     },
     {
         id: 'product7',
-        type:"all",
+        type: "all",
         url: 'https://rukminim2.flixcart.com/image/612/612/xif0q/headphone/u/x/n/-original-imagt5cwdh42qqhh.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/headphone/u/x/n/-original-imagt5cwdh42qqhh.jpeg?q=70',
         title: {
@@ -137,9 +137,9 @@ export const products = [
     // mens
     {
         id: 'product8',
-        type:"men",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/t-shirt/r/t/z/m-ausk0165-ausk-original-imaghu9fyjk3hv7k.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/t-shirt/r/t/z/m-ausk0165-ausk-original-imaghu9fyjk3hv7k.jpeg?q=70',
+        type: "men",
+        url: 'https://m.media-amazon.com/images/I/61FKFL-2tPL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/61FKFL-2tPL._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Men Tshirt',
             longTitle: 'Men Striped Round Neck Cotton Blend Blue, Black T-Shirt'
@@ -156,9 +156,9 @@ export const products = [
     },
     {
         id: 'product9',
-        type:"men",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/kurta/v/o/u/l-ic-shk-303-indiclub-original-imagrmhx4zrfdcka.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/kurta/v/o/u/l-ic-shk-303-indiclub-original-imagrmhx4zrfdcka.jpeg?q=70',
+        type: "men",
+        url: 'https://m.media-amazon.com/images/I/61btt86+J2L._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/61btt86+J2L._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Men Kurta',
             longTitle: 'Men Printed Linen Blend Straight Kurta  (Multicolor)'
@@ -175,9 +175,9 @@ export const products = [
     },
     {
         id: 'product10',
-        type:"men",
-        url: 'https://rukminim2.flixcart.com/image/130/130/xif0q/shoe/v/m/b/-original-imagt5w6bgk9fgkk.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/shoe/v/m/b/-original-imagt5w6bgk9fgkk.jpeg?q=70',
+        type: "men",
+        url: 'https://m.media-amazon.com/images/I/71xe4YjlZRL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/71xe4YjlZRL._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Men shoes',
             longTitle: 'ENRY Flux M Running Shoes For Men  (Green)'
@@ -194,9 +194,9 @@ export const products = [
     },
     {
         id: 'product11',
-        type:"men",
-        url: 'https://rukminim2.flixcart.com/image/150/150/kzk6bgw0/watch/e/g/g/2-curren-007-curren-men-original-imagbjftyeznge4b.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/kzk6bgw0/watch/e/g/g/2-curren-007-curren-men-original-imagbjftyeznge4b.jpeg?q=70',
+        type: "men",
+        url: 'https://m.media-amazon.com/images/I/81JIQkgfauL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/81JIQkgfauL._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Wrist Watch',
             longTitle: 'Analog Watch - For Men Curren_007'
@@ -213,7 +213,7 @@ export const products = [
     },
     {
         id: 'product12',
-        type:"men",
+        type: "men",
         url: 'https://rukminim2.flixcart.com/image/150/150/k0zlsi80/sunglass/g/g/g/l-m242bk2t-fastrack-original-imafkz5mzkkdhv72.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/k0zlsi80/sunglass/g/g/g/l-m242bk2t-fastrack-original-imafkz5mzkkdhv72.jpeg?q=70',
         title: {
@@ -232,7 +232,7 @@ export const products = [
     },
     {
         id: 'product13',
-        type:"men",
+        type: "men",
         url: 'https://rukminim2.flixcart.com/image/150/150/knan98w0/wallet-card-wallet/q/z/y/genuine-leather-card-wallet-cc601br-card-holder-hammonds-original-imag2yg8vmqhswhy.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/knan98w0/wallet-card-wallet/q/z/y/genuine-leather-card-wallet-cc601br-card-holder-hammonds-original-imag2yg8vmqhswhy.jpeg?q=70',
         title: {
@@ -252,10 +252,29 @@ export const products = [
 
     //women
     {
+        id: 'product20',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/81r7-JzcuEL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/81r7-JzcuEL._AC_UL480_FMwebp_QL65_.jpg',
+        title: {
+            shortTitle: 'Women Shorts',
+            longTitle: 'Women shorts night Dress'
+        },
+        price: {
+            mrp: 300,
+            cost: 150,
+            discount: '50%'
+        },
+        quantity: 1,
+        description: 'Women"s dresses and styles encompass a diverse range of fashion options, catering to various tastes and occasions. From elegant and timeless little black dresses that exude sophistication to bohemian maxi dresses that embrace free-spirited charm',
+        discount: 'Minimum 50% Off',
+        tagline: 'Grab Now!'
+    },
+    {
         id: 'product14',
-        type:"women",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/dress/c/a/a/l-raf00006-brown-alisha-fashion-original-imaft5r7zpxefdpg-bb.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/dress/c/a/a/l-raf00006-brown-alisha-fashion-original-imaft5r7zpxefdpg-bb.jpeg?q=70',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/71Z71z86ouS._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/71Z71z86ouS._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'ALISHA FASHION ',
             longTitle: 'Women Shirt Brown Dress'
@@ -272,9 +291,9 @@ export const products = [
     },
     {
         id: 'product19',
-        type:"women",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/jean/z/s/f/40-basic-jns-15-ice-blue-justfaith-original-imafs2z6tzzz2cdy-bb.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/jean/z/s/f/40-basic-jns-15-ice-blue-justfaith-original-imafs2z6tzzz2cdy-bb.jpeg?q=70',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/71SyYaoK5+L._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/71SyYaoK5+L._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Women jeans',
             longTitle: 'Women Slim Mid Rise Light Blue Jeans'
@@ -291,9 +310,9 @@ export const products = [
     },
     {
         id: 'product15',
-        type:"women",
-        url: 'https://rukminim2.flixcart.com/image/150/150/k2qh5zk0/top/u/5/r/l-isca-206maroon-istyle-can-original-imafmyt48rbtdqe2.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/k2qh5zk0/top/u/5/r/l-isca-206maroon-istyle-can-original-imafmyt48rbtdqe2.jpeg?q=70',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/713wEcCIKRL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/713wEcCIKRL._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Women clothing',
             longTitle: 'Casual Flared Sleeves Polka Print Women White, Maroon Top'
@@ -310,9 +329,9 @@ export const products = [
     },
     {
         id: 'product16',
-        type:"women",
-        url: 'https://rukminim2.flixcart.com/image/150/150/xif0q/ethnic-set/y/9/6/m-ng-kurta-komal-fashion-original-imagfr4qmnjdurhu-bb.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/xif0q/ethnic-set/y/9/6/m-ng-kurta-komal-fashion-original-imagfr4qmnjdurhu-bb.jpeg?q=70',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/61fru6EIY3S._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/61fru6EIY3S._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Women clothing',
             longTitle: 'Women Viscose Rayon Kurta Palazzo Set'
@@ -329,9 +348,9 @@ export const products = [
     },
     {
         id: 'product17',
-        type:"women",
-        url: 'https://rukminim2.flixcart.com/image/150/150/kffq2kw0/earring/t/k/z/ear5043-afj-gold-original-imafvw99gchsknvu.jpeg?q=70',
-        detailUrl: 'https://rukminim2.flixcart.com/image/416/416/kffq2kw0/earring/t/k/z/ear5043-afj-gold-original-imafvw99gchsknvu.jpeg?q=70',
+        type: "women",
+        url: 'https://m.media-amazon.com/images/I/81YXsQzGPpL._AC_UL480_FMwebp_QL65_.jpg',
+        detailUrl: 'https://m.media-amazon.com/images/I/81YXsQzGPpL._AC_UL480_FMwebp_QL65_.jpg',
         title: {
             shortTitle: 'Ear Rings',
             longTitle: 'Traditional Trendy Stylish Earrings Alloy Jhumki Earring'
@@ -348,7 +367,7 @@ export const products = [
     },
     {
         id: 'product18',
-        type:"women",
+        type: "women",
         url: 'https://rukminim2.flixcart.com/image/150/150/jwqpocw0/top/t/n/y/l-ct103a-fassion-original-imafhct2geyxcf26.jpeg?q=70',
         detailUrl: 'https://rukminim2.flixcart.com/image/416/416/jwqpocw0/top/t/n/y/l-ct103a-fassion-original-imafhct2geyxcf26.jpeg?q=70',
         title: {

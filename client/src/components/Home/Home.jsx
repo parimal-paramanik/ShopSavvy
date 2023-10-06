@@ -53,7 +53,7 @@ const Home = () => {
       <Midsection/>
       <Slide products= {womenproducts} title = "Women Styles"></Slide>
       <Midsection />
-      <Slide products= {electronic} title= "Deal of the Day"></Slide> 
+      <Slide products= {electronic} title= "Electronics"></Slide> 
    
    </Component>
    </>
