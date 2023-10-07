@@ -4,6 +4,7 @@ import image from "../../logo/shopshavvy.png"
 //importing headers components
 import Search from './Search'
 import CustomButtons from './CustomButtons'
+import { Link } from 'react-router-dom'
 
 const StyledHeader = styled(AppBar)`
 background: aqualblue;
@@ -12,7 +13,7 @@ box-Shadow:none;
 marginTop:10;
 `
 
-const Component = styled(Box)`
+const Component = styled(Link)`
     margin-left: 12%;
     // line-height: 0;
     // color: #FFFFFF;
@@ -27,7 +28,7 @@ const Header = () => {
   return (
     <StyledHeader>
       <Toolbar style={{minHeight:55}}>
-        <Component>
+        <Component to="/">
           <img src={image} style={{ width: 120 }} alt="logo" />
         </Component>
         <Search/>

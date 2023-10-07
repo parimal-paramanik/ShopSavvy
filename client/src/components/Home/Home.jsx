@@ -28,7 +28,8 @@ const Home = () => {
     dispatch(getProducts())
   },[dispatch])
  
-  // filter out only those products which has a id of "product2"   
+  // filter out only those products which has a id of "product2"  
+   
   const allproducts = products.filter((product) => {
     return product.type === "all" ;
   });

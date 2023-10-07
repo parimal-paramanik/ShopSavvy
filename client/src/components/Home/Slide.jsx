@@ -3,6 +3,7 @@ import Carousel from "react-multi-carousel"
 import "react-multi-carousel/lib/styles.css";
 import Countdown from 'react-countdown';
 import { Button, Divider, Box, Typography, styled } from '@mui/material';
+import { Link } from "react-router-dom";
 // styles 
 const Component = styled(Box)`
     margin-top: 10px;
@@ -100,12 +101,15 @@ const responsive = {
   >
     {
         products.map((data,index)=>(
-          <Box key={index} textAlign="center" style={{ padding: '25px 15px' }}>
+          <Link to={`product/${data.id}`} style={{textDecoration:"none"}}>
+            <Box key={index} textAlign="center" style={{ padding: '25px 15px' }}>
           <Image  alt="productImg" key={index} src={data.url} />
           <Text style={{ fontWeight: 600, color: '#212121' }}>{data.title.shortTitle}</Text>
           <Text style={{ color: '#008000' }}>{data.discount}</Text>
           <Text style={{ color: '#212121', opacity: '.7' }}>{data.tagline}</Text>
           </Box>
+
+          </Link>
         ))
     }
  </Carousel>
