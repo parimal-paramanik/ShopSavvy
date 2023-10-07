@@ -5,18 +5,36 @@ import { useEffect } from 'react'
 import { useDispatch ,useSelector} from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { getSingleProductDeatils } from '../../redux/actions/productActions'
+import ProductDetail from './ProductDetail';
+import ActionImage from './ActionImage';
 
-import { Box, Typography ,styled} from '@mui/material'
+import { Box, Typography ,Grid ,styled} from '@mui/material'
 
 
 const RightContainer = styled(Grid)`
     margin-top: 50px;
+    marfin-left :50px;
     & > p {
         margin-top: 10px;
     }
 `;
 
+const Container = styled(Grid)(({ theme }) => ({
+  background: '#FFFFFF',
+  display: 'flex',
+  [theme.breakpoints.down('md')]: {
+      margin: 0,
+      textAlign:"center"
+  }
+}))
+
+const Component = styled(Box)`
+    margin-top: 55px;
+    background: #F2F2F2;
+`;
+
 const Singlepage = () => {
+  const fassured = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/fa_62673a.png'
   const dispatch= useDispatch()
   const {id} = useParams();
 
@@ -28,18 +46,21 @@ const Singlepage = () => {
   },[dispatch,id,loading,product])
 
   return (
-    <Box>
+    <Component>
+      <Box></Box>
       {
          product && Object.keys(product).length &&
-        <Box>
-            <Box>
-              <img src= {product.detailUrl} alt ={product.title.sortTitle}/>
-            </Box>
+        
+           <Container container> 
+                    <Grid item lg={4} md={4} sm={8} xs={12}>
+                    <ActionImage product={product} />     
+                    </Grid>
+           
             <RightContainer item lg={8} md={8} sm={8} xs={12}>
                         <Typography>{product.title.longTitle}</Typography>
                         <Typography style={{marginTop: 5, color: '#878787', fontSize: 14 }}>
                             8 Ratings & 1 Reviews
-                            <span><img src={fassured} style={{width: 77, marginLeft: 20}} /></span>
+                            <span><img src={fassured} style={{width: 77, marginLeft: 20}}  alt = "fuck"/></span>
                         </Typography>
                         <Typography>
                             <span style={{ fontSize: 28 }}>₹{product.price.cost}</span>&nbsp;&nbsp;&nbsp; 
@@ -48,9 +69,10 @@ const Singlepage = () => {
                         </Typography>
                         <ProductDetail product={product} />
                     </RightContainer>
-        </Box>
+                    </Container>
+      
       }
-    </Box>
+    </Component>
   )
 }
 
