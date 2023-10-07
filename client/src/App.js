@@ -3,6 +3,7 @@ import Home from './components/Home/Home';
 import {Box} from "@mui/material"
 import {BrowserRouter,  Routes,Route}  from "react-router-dom"
 import Singlepage from "./components/Singlepage/Singlepage";
+import Footer from "./components/Footer/Footer";
 
 import DataProvider from "./context/ContextProvider";
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/product/:id" element ={<Singlepage/>}/>
         </Routes>
       </Box>
+        <Footer/>
       </BrowserRouter>
     </DataProvider>
   );

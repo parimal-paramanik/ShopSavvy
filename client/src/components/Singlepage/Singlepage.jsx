@@ -24,7 +24,8 @@ const Container = styled(Grid)(({ theme }) => ({
   display: 'flex',
   [theme.breakpoints.down('md')]: {
       margin: 0,
-      textAlign:"center"
+      textAlign:"center",
+      wordWrap: "break-word",
   }
 }))
 
