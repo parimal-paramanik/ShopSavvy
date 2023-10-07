@@ -49,7 +49,7 @@ const ProductDetail = ({ product }) => {
                         <TableCell>
                             <span style={{ color: '#2874f0' }}>SuperComNet</span>
                             <Typography>GST invoice available</Typography>
-                            <Typography>View more sellers starting from ₹329</Typography>
+                            
                         </TableCell>
                     </ColumnText>
                     <TableRow>
