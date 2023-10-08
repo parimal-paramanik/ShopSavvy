@@ -48,8 +48,9 @@ const ProductDetail = ({ product }) => {
                         <TableCell style={{ color: '#878787' }}>Seller</TableCell>
                         <TableCell>
                             <span style={{ color: '#2874f0' }}>SuperComNet</span>
-                            <Typography>GST invoice available</Typography>
+                            <Typography>GST invoice available...</Typography>
                             
+
                         </TableCell>
                     </ColumnText>
                     <TableRow>
