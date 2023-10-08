@@ -60,7 +60,7 @@ const Singlepage = () => {
             <RightContainer item lg={8} md={8} sm={8} xs={12}>
                         <Typography>{product.title.longTitle}</Typography>
                         <Typography style={{marginTop: 5, color: '#878787', fontSize: 14 }}>
-                            8 Ratings & 1 Reviews
+                            25 Ratings & 13 Reviews
                             <span><img src={fassured} style={{width: 77, marginLeft: 20}}  alt = "fuck"/></span>
                         </Typography>
                         <Typography>

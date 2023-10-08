@@ -126,6 +126,7 @@ const LoginDialog = ({ open, setOpen }) => {
   const signupApi = async () => {
     const data = await SignupUser(signup)
     // console.log(data)
+    
     if(!data){
       return
     } else if (data.data.msg === "User already exist"){
@@ -142,8 +143,10 @@ const LoginDialog = ({ open, setOpen }) => {
         dialogClose()
         //  console.log(data)
         setAccount(data.data.username)
-      }else{
+      }else if (data.status === 401){
          setError(true)
+      }else {
+        setError(true)
       }
     } 
   
@@ -162,6 +165,7 @@ const LoginDialog = ({ open, setOpen }) => {
                 <TextField onChange={(e) => loginfieldChanged(e)} name="username" variant="standard" label="enter valid username." />
                 { error && <Error>please enter valid username or password</Error>}
                 <TextField onChange={(e) => loginfieldChanged(e)} name="password" variant="standard" label="enter  password" />
+               
                 <Text>By continueing, you agree to shopshavvy's term of use and privacy policy </Text>
                 <LoginButton onClick={() => loginApi()}>Login</LoginButton>
                 <Typography style={{ textAlign: 'center' }}>OR</Typography>
